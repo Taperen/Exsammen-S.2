@@ -32,14 +32,15 @@ namespace Exsammen_S_2
 
 
 
+        public void Bruger(Books book)
+        {
+            int i = 0;
 
+            if (i != book.Antal_Eksemplarer)
+            {
 
+            }
 
-
-
-
-
-
-
+        }
     }
 }
