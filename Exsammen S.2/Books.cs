@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
 
-namespace Exsammen_S_2
+namespace Exsammen_S._2
 {
     internal class Books
     {
@@ -11,19 +11,17 @@ namespace Exsammen_S_2
         {
         }
 
-        public Books(int id, string forfatter, string titel, string udgiver, int udgivelsesår, int antal_Eksemplarer, int iSBN, string user)
+        public Books(string forfatter, string titel, string udgiver, int udgivelsesår, int antal_Eksemplarer, int iSBN, string person)
         {
-            Id = id;
             Forfatter = forfatter;
             Titel = titel;
             Udgiver = udgiver;
             Udgivelsesår = udgivelsesår;
             Antal_Eksemplarer = antal_Eksemplarer;
             ISBN = iSBN;
-            User = user;
+            Person = person;
         }
 
-        public int Id { get; set; }
         public string Forfatter { get; set; }
         public string Titel { get; set; }
         public string Udgiver { get; set; }
@@ -31,8 +29,9 @@ namespace Exsammen_S_2
         public int Udgivelsesår { get; set; }
         public int Antal_Eksemplarer { get; set; }
         public int ISBN { get; set; }
-        public string User { get; set; }
-        internal List<Books> Book1 { get; set; } = new List<Books>(0);
+        public string Person { get; set; }
+
+        internal List<Books> Book { get; set; } = new List<Books>(0);
 
         public void Bruger(Books book)
         {

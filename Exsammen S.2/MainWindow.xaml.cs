@@ -22,7 +22,7 @@ namespace Exsammen_S_2
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        List<Books> Book = new List<Books>();
 
         public MainWindow()
         {
@@ -41,7 +41,7 @@ namespace Exsammen_S_2
 
         private void Submit_btn_Click(object sender, RoutedEventArgs e)
         {
-
+            Book
         }
 
         public string Bruger_info()

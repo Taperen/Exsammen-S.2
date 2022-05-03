@@ -9,8 +9,9 @@ namespace Exsammen_S_2
 {
     internal class BogInfo
     {
-        private string connectionString = "Data Source=CV-BB-5322;Initial Catalog=Bog_info; Eksammen_S_2;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        private string connectionString = "Data Source=CV-BB-5322;Initial Catalog=Bog_info; Eksammen S.2;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
+        public string ConnectionString { get => connectionString; set => connectionString = value; }
 
         public DataSet Execute(string query)
 
@@ -18,7 +19,7 @@ namespace Exsammen_S_2
             try
             {
                 DataSet resultSet = new DataSet();
-                using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand(query, new SqlConnection(connectionString))))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(new SqlCommand(query, new SqlConnection(ConnectionString))))
                 {
 
                     // Open conn, execute query, close conn, wrap result in DataSet: 
@@ -38,7 +39,7 @@ namespace Exsammen_S_2
         public List<Books> GetBooks()
         {
             List<Books> AllBooks = new List<Books>(0);
-            string allbookQuery = "SELECT * FROM Bog_info";
+            string allbookQuery = "SELECT * FROM Boog_info";
 
             // Perform query and save result in variable:
             DataSet resultSet = Execute(allbookQuery);
@@ -57,28 +58,33 @@ namespace Exsammen_S_2
                 int Udgivelsesår = (int)Bookrow["Udgivelsesår"];
                 int Antal_Eksemplarer = (int)Bookrow["Antal_Eksemplarer"];
                 int ISBN = (int)Bookrow["ISBN"];
-                Books book = new Books();
-                book.Forfatter = Forfatter;
-                book.Titel = Titel;
-                book.Udgiver = Udgiver;
-                book.Udgivelsesår = Udgivelsesår;
-                book.Antal_Eksemplarer = Antal_Eksemplarer;
-                book.ISBN = ISBN;
+                string Person = (string)Bookrow["Person"];
+                Books book = new Books
+                {
+                    Forfatter = Forfatter,
+                    Titel = Titel,
+                    Udgiver = Udgiver,
+                    Udgivelsesår = Udgivelsesår,
+                    Antal_Eksemplarer = Antal_Eksemplarer,
+                    ISBN = ISBN,
+                    Person = Person
+                };
                 AllBooks.Add(book);
             }
             return AllBooks;
         }
-        public void AddNewBook(BogInfo book)
+        public void AddNewBook(object Brugeren)
         {
+            int i = 0;
             string addNewBookQuery =
-                    $"INSERT INTO Bog_info (name) VALUES(' ',' ',' ')";
+                    $"INSERT INTO Bog_info (Antal_Eksemplarer)(Person)(Date) VALUES('0','{Brugeren}','{i}')";
             Execute(addNewBookQuery);
         }
 
         public void RemoveBook()
         {
             string RemoveABookQuery =
-                    $"INSERT INTO Bog_info (name) VALUES(' ',' ',' ')";
+                    $"INSERT INTO Bog_info (Antal_Eksemplarer)(Person)(Date) VALUES('1',' ',' ')";
             Execute(RemoveABookQuery);
         }
 
