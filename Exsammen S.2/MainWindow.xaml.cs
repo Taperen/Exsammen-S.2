@@ -25,7 +25,6 @@ namespace Exsammen_S_2
         private protected Gamecontroller GC = new Gamecontroller();
 
 
-
         public MainWindow()
         {
             InitializeComponent();
@@ -52,5 +51,10 @@ namespace Exsammen_S_2
             string Brugeren = $"{Bruger_input}";
             return Brugeren;
         }
+
+        
+
+
+
     }
 }

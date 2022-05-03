@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using Exsammen_S_2;
 using System.Text;
+using System.Data.SqlClient;
 
 namespace Exsammen_S_2
 {
@@ -68,11 +68,20 @@ namespace Exsammen_S_2
             }
             return AllBooks;
         }
-        public void AddNew(BogInfo Book)
+        public void AddNewBook(BogInfo book)
         {
             string addNewBookQuery =
                     $"INSERT INTO Bog_info (name) VALUES(' ',' ',' ')";
             Execute(addNewBookQuery);
         }
+
+        public void RemoveBook()
+        {
+            string RemoveABookQuery =
+                    $"INSERT INTO Bog_info (name) VALUES(' ',' ',' ')";
+            Execute(RemoveABookQuery);
+        }
+
+
     }
 }

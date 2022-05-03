@@ -13,7 +13,7 @@ namespace Exsammen_S_2
         {
         }
 
-        public Books(string forfatter, string titel, string udgiver, int udgivelsesår, int antal_Eksemplarer, int iSBN)
+        public Books(string forfatter, string titel, string udgiver, int udgivelsesår, int antal_Eksemplarer, int iSBN, string user)
         {
             Forfatter = forfatter;
             Titel = titel;
@@ -21,14 +21,17 @@ namespace Exsammen_S_2
             Udgivelsesår = udgivelsesår;
             Antal_Eksemplarer = antal_Eksemplarer;
             ISBN = iSBN;
+            User = User;
         }
 
         public string Forfatter { get; set; }
         public string Titel { get; set; }
         public string Udgiver { get; set; }
+
         public int Udgivelsesår { get; set; }
         public int Antal_Eksemplarer { get; set; }
         public int ISBN { get; set; }
+        public string User { get; set; }
 
 
 
@@ -40,7 +43,20 @@ namespace Exsammen_S_2
             {
 
             }
+            else if (i == book.Antal_Eksemplarer)
+            {
+
+            }
+            else
+            {
+
+            }
+
+
 
         }
+
+
+
     }
 }
