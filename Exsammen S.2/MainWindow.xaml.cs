@@ -22,7 +22,6 @@ namespace Exsammen_S_2
     /// </summary>
     public partial class MainWindow : Window
     {
-        private protected Gamecontroller GC = new Gamecontroller();
 
 
         public MainWindow()
@@ -40,9 +39,8 @@ namespace Exsammen_S_2
 
 
 
-        private void submit_btn_Click(object sender, RoutedEventArgs e)
+        private void Submit_btn_Click(object sender, RoutedEventArgs e)
         {
-
 
         }
 
