@@ -22,26 +22,31 @@ namespace Exsammen_S_2
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Books> Book = new List<Books>();
+        private protected Books book = new Books();
 
         public MainWindow()
         {
             InitializeComponent();
 
 
-
-
+            DispatcherTimer gameTimer = new DispatcherTimer
+            {
+                Interval = new TimeSpan(0, 0, 1, 0)
+            };
+            gameTimer.Tick += Update;
+            gameTimer.Start();
 
 
         }
 
+        public void Update(object sender, EventArgs e)
+        {
 
-
-
+        }
 
         private void Submit_btn_Click(object sender, RoutedEventArgs e)
         {
-            Book
+            book.Bruger(book);
         }
 
         public string Bruger_info()
@@ -49,10 +54,6 @@ namespace Exsammen_S_2
             string Brugeren = $"{Bruger_input}";
             return Brugeren;
         }
-
-        
-
-
 
     }
 }

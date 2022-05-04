@@ -77,14 +77,14 @@ namespace Exsammen_S_2
         {
             int i = 0;
             string addNewBookQuery =
-                    $"INSERT INTO Bog_info (Antal_Eksemplarer)(Person)(Date) VALUES('0','{Brugeren}','{i}')";
+                    $"INSERT INTO Boog_info (Antal_Eksemplarer)(Person)(Date) VALUES('0','{Brugeren}','{i}')";
             Execute(addNewBookQuery);
         }
 
         public void RemoveBook()
         {
             string RemoveABookQuery =
-                    $"INSERT INTO Bog_info (Antal_Eksemplarer)(Person)(Date) VALUES('1',' ',' ')";
+                    $"INSERT INTO Boog_info (Antal_Eksemplarer)(Person)(Date) VALUES('1',' ',' ')";
             Execute(RemoveABookQuery);
         }
 

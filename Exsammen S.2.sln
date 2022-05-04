@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exsammen_S_2", "Exsammen S.2\Exsammen_S_2.csproj", "{A59BB28C-F06C-4C96-824A-76F64A1919E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exsammen_S_2", "Exsammen S.2\Exsammen_S_2.csproj", "{A59BB28C-F06C-4C96-824A-76F64A1919E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{8D7E4C27-DBF0-492C-B3DA-27B2791C06B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A59BB28C-F06C-4C96-824A-76F64A1919E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A59BB28C-F06C-4C96-824A-76F64A1919E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A59BB28C-F06C-4C96-824A-76F64A1919E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D7E4C27-DBF0-492C-B3DA-27B2791C06B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D7E4C27-DBF0-492C-B3DA-27B2791C06B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D7E4C27-DBF0-492C-B3DA-27B2791C06B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D7E4C27-DBF0-492C-B3DA-27B2791C06B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
