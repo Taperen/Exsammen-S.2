@@ -22,6 +22,7 @@ namespace Exsammen_S_2
     /// </summary>
     public partial class MainWindow : Window
     {
+        BogInfo db = new BogInfo();
         private protected Books book = new Books();
 
         public MainWindow()
@@ -46,13 +47,20 @@ namespace Exsammen_S_2
 
         private void Submit_btn_Click(object sender, RoutedEventArgs e)
         {
-            book.Brugeren(book);
+            db.GetAndRemove();
+            this.bindgrid(Book_input);
         }
 
         public string Bruger_info()
         {
             string Brugeren = $"{Bruger_input}";
             return Brugeren;
+        }
+
+        public string bok_info()
+        {
+            string bookIn = $"{Book_input}";
+            return bookIn;
         }
 
     }

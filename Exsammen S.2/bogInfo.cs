@@ -9,6 +9,7 @@ namespace Exsammen_S_2
 {
     internal class BogInfo
     {
+        MainWindow main = new MainWindow();
         private string connectionString = "Data Source=CV-BB-5322;Initial Catalog=Bog_info; Eksammen S.2;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         public string ConnectionString { get => connectionString; set => connectionString = value; }
@@ -105,6 +106,68 @@ namespace Exsammen_S_2
             {
 
             }
+
+        }
+
+
+
+
+
+
+
+        public string GetAndRemove(Books book, string bookIn, string txt, string Brugeren)
+        {
+
+            if (book.Person == Brugeren && book.Titel == bookIn && book.Antal_Eksemplarer == 0)
+            {
+                string removebookquery = $"UPDATE [book_Table] SET Bruger = '', Copies = '1' WHERE Title = '{bookIn}'";
+
+                Execute(removebookquery);
+                return "";
+            }
+            else if (book.Titel == bookIn && book.Antal_Eksemplarer == 1)
+            {
+                try
+                {
+                    var sql = $@"UPDATE [Boog_info] SET Person = '{Brugeren}', Antal_Eksemplarer = '0' WHERE Titel = '{bookIn}'";
+
+
+
+                    string insert = $"INSERT INTO [Boog_info] (Person)";
+
+                    // dataGrid1.ItemsSource = null;
+                    string select = $"SELECT (Person) FORM [Boog_info]";
+
+                    using (var connection = new SqlConnection(connectionString))
+                    {
+                        using (var command = new SqlCommand(sql, connection))
+
+                        {
+
+
+                            command.Parameters.AddWithValue("@Person", bookIn);
+
+
+                            connection.Open();
+                            command.ExecuteNonQuery();
+
+                            //  dataGrid1.Items.Clear();
+
+
+
+
+                            //  dataGrid1.DataContext = Bind;
+
+                        }
+                    }
+
+                }
+                catch (Exception)
+                {
+                    return "";
+                }
+            }
+            return "";
 
         }
 
