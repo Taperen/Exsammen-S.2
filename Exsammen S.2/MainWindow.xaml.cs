@@ -46,7 +46,7 @@ namespace Exsammen_S_2
 
         private void Submit_btn_Click(object sender, RoutedEventArgs e)
         {
-            book.Bruger(book);
+            book.Brugeren(book);
         }
 
         public string Bruger_info()

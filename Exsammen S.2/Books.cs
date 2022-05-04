@@ -7,6 +7,10 @@ namespace Exsammen_S_2
 {
     internal class Books
     {
+        BogInfo info = new BogInfo();
+
+
+
         public Books()
         {
         }
@@ -33,34 +37,6 @@ namespace Exsammen_S_2
         public object Brugeren { get; private set; }
         internal List<Books> Book { get; set; } = new List<Books>(0);
 
-        public void Bruger(Books book)
-        {
-            int i = 0;
-
-            if (i != book.Antal_Eksemplarer)
-            {
-                string addNewBookQuery =
-                        $"INSERT INTO Bog_info (Antal_Eksemplarer)(Person)(Date) VALUES('0','{Brugeren}','{i}')";
-                Execute(addNewBookQuery);
-            }
-            else if (i == book.Antal_Eksemplarer)
-            {
-                string RemoveABookQuery =
-                    $"INSERT INTO Boog_info (Antal_Eksemplarer)(Person)(Date) VALUES('1',' ',' ')";
-                Execute(RemoveABookQuery);
-            }
-            else
-            {
-
-            }
-
-
-
-        }
-
-        private void Execute(string addNewBookQuery)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

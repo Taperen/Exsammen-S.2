@@ -12,9 +12,9 @@ namespace Exsammen_S_2
         private string connectionString = "Data Source=CV-BB-5322;Initial Catalog=Bog_info; Eksammen S.2;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         public string ConnectionString { get => connectionString; set => connectionString = value; }
+        public object Brugeren { get; private set; }
 
         public DataSet Execute(string query)
-
         {
             try
             {
@@ -59,6 +59,7 @@ namespace Exsammen_S_2
                 int Antal_Eksemplarer = (int)Bookrow["Antal_Eksemplarer"];
                 int ISBN = (int)Bookrow["ISBN"];
                 string Person = (string)Bookrow["Person"];
+
                 Books book = new Books
                 {
                     Forfatter = Forfatter,
@@ -73,7 +74,7 @@ namespace Exsammen_S_2
             }
             return AllBooks;
         }
-        public void AddNewBook(object Brugeren)
+        public void AddNewBook(object Person)
         {
             int i = 0;
             string addNewBookQuery =
@@ -87,6 +88,26 @@ namespace Exsammen_S_2
                     $"INSERT INTO Boog_info (Antal_Eksemplarer)(Person)(Date) VALUES('1',' ',' ')";
             Execute(RemoveABookQuery);
         }
+
+        public void Bruger(Books book)
+        {
+            int i = 0;
+
+            if (i != book.Antal_Eksemplarer)
+            {
+                AddNewBook(Brugeren);
+            }
+            else if (i == book.Antal_Eksemplarer)
+            {
+
+            }
+            else
+            {
+
+            }
+
+        }
+
 
 
     }
